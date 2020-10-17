@@ -1,0 +1,133 @@
+API Name  - Token Generation
+URL - localhost:8080/token/generate-token
+Method - POST
+Header - Content-Type: application/json
+Body -
+{
+	"username":"imdadareeph",
+	"password":"imdadareeph"
+}
+
+Response :
+
+{
+    "status": 200,
+    "message": "success",
+    "result": {
+        "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpbWRhZGFyZWVwaCIsInNjb3BlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwiaXNzIjoiaHR0cDovL2ltZGFkYXJlZXBoLmNvbSIsImlhdCI6MTYwMjcxMDU3NiwiZXhwIjoxNjAyNzI4NTc2fQ.YDiOn9iXHPGFdzDx6zSj4ys5CijnXBqoawLzUzU5gvk",
+        "username": "imdadareeph"
+    }
+}
+
+API Name  - List User
+URL - http://localhost:8080/users
+Method - Get
+Header - Content-Type: application/json
+    Authorization : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGV4MTIzIiwic2NvcGVzIjpbeyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dLCJpc3MiOiJodHRwOi8vZGV2Z2xhbi5jb20iLCJpYXQiOjE1NDEwNjIzOTMsImV4cCI6MTU0MTA4MDM5M30.DMoB5kv72X7Jf-U5APdjK3UUcGomA9NuJj6XGxmLyqE
+Response -
+{
+    "status": 200,
+    "message": "User list fetched successfully.",
+    "result": [
+        {
+            "id": 1,
+            "firstName": "Imdad",
+            "lastName": "Areeph",
+            "username": "imdadareeph",
+            "salary": 6000,
+            "age": 34
+        },
+        {
+            "id": 2,
+            "firstName": "Faiz",
+            "lastName": "Khan",
+            "username": "fiazkhan",
+            "salary": 8000,
+            "age": 23
+        },
+        {
+            "id": 3,
+            "firstName": "Sarfaraz",
+            "lastName": "Jamal",
+            "username": "sarfarazjamal",
+            "salary": 5000,
+            "age": 30
+        }
+    ]
+}
+
+API Name  - Create User
+URL - http://localhost:8080/users
+Method - POST
+Header - Content-Type: application/json
+    Authorization : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGV4MTIzIiwic2NvcGVzIjpbeyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dLCJpc3MiOiJodHRwOi8vZGV2Z2xhbi5jb20iLCJpYXQiOjE1NDEwNjIzOTMsImV4cCI6MTU0MTA4MDM5M30.DMoB5kv72X7Jf-U5APdjK3UUcGomA9NuJj6XGxmLyqE
+Body -
+{
+	"username":"test",
+	"password":"test",
+	"firstName":"test",
+	"lastName":"test",
+	"age":23,
+	"salary":12345
+}
+
+Response -
+
+{
+    "status": 200,
+    "message": "User saved successfully.",
+    "result": {
+        "id": 4,
+        "firstName": "test",
+        "lastName": "test"",
+        "username": "test",
+        "salary": 12345,
+        "age": 23
+    }
+}
+
+
+API Name  - Update User
+URL - http://localhost:8080/users/4
+Method - PUT
+Header - Content-Type: application/json
+    Authorization : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGV4MTIzIiwic2NvcGVzIjpbeyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dLCJpc3MiOiJodHRwOi8vZGV2Z2xhbi5jb20iLCJpYXQiOjE1NDEwNjIzOTMsImV4cCI6MTU0MTA4MDM5M30.DMoB5kv72X7Jf-U5APdjK3UUcGomA9NuJj6XGxmLyqE
+Body -
+{
+	"username":"test1",
+	"password":"test1",
+	"firstName":"test1",
+	"lastName":"test1",
+	"age":24,
+	"salary":12345
+}
+
+Response -
+
+{
+    "status": 200,
+    "message": "User updated successfully.",
+    "result": {
+        "id": 0,
+        "firstName": "test1",
+        "lastName": "test1",
+        "username": "test1",
+        "password": "test1",
+        "age": 24,
+        "salary": 12345
+    }
+}
+
+API Name  - Delete User
+URL - http://localhost:8080/users/4
+Method - DELETE
+Header - Content-Type: application/json
+    Authorization : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGV4MTIzIiwic2NvcGVzIjpbeyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dLCJpc3MiOiJodHRwOi8vZGV2Z2xhbi5jb20iLCJpYXQiOjE1NDEwNjIzOTMsImV4cCI6MTU0MTA4MDM5M30.DMoB5kv72X7Jf-U5APdjK3UUcGomA9NuJj6XGxmLyqE
+
+Response -
+{
+    "status": 200,
+    "message": "User deleted successfully.",
+    "result": null
+}
+
